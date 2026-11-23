@@ -79,7 +79,7 @@ function FeaturedProject({ p, flip }: { p: Project; flip?: boolean }) {
         <div className={`lg:col-span-5 ${flip ? "lg:order-2 lg:col-start-8" : ""}`}>
           <motion.h3
             id={`${p.id}-title`}
-            className="text-[clamp(3rem,7vw,6.75rem)] font-semibold leading-[0.88] tracking-[-0.055em]"
+            className="text-[clamp(2.5rem,4.8vw,4.5rem)] font-semibold leading-[1] tracking-[-0.045em]"
             initial={{ opacity: 0, y: reduce ? 0 : 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "0px 0px -10% 0px" }}
@@ -201,7 +201,7 @@ function ProjectIndex({ items }: { items: Project[] }) {
                   <span className="font-mono text-[0.6875rem] tracking-[0.14em] text-mute md:col-span-1">{p.index}</span>
                   <span className="md:col-span-5">
                     <span
-                      className={`block text-[clamp(1.75rem,4vw,3.25rem)] font-semibold leading-none tracking-[-0.045em] transition-[color,transform] duration-500 group-hover:translate-x-2 ${open ? "" : "text-paper"}`}
+                      className={`block text-[clamp(1.5rem,3vw,2.5rem)] font-semibold leading-[1.05] tracking-[-0.035em] transition-[color,transform] duration-500 group-hover:translate-x-2 ${open ? "" : "text-paper"}`}
                       style={open ? { color: p.accent } : undefined}
                     >
                       {p.name}
