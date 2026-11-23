@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import type { ElementType } from "react";
+import { Fragment, type ElementType } from "react";
 
 type Props = {
   text: string;
@@ -15,11 +15,13 @@ type Props = {
   play?: boolean;
   /** words (by index) to render in the serif italic accent */
   accent?: number[];
+  /** force a line break after these word indexes */
+  breakAfter?: number[];
   id?: string;
 };
 
 /** Masked word-by-word rise. Each word slides up from behind a clip. */
-export function SplitWords({ text, as: Tag = "span", className, delay = 0, stagger = 0.06, immediate, play, accent = [], id }: Props) {
+export function SplitWords({ text, as: Tag = "span", className, delay = 0, stagger = 0.06, immediate, play, accent = [], breakAfter = [], id }: Props) {
   const reduce = useReducedMotion();
   const words = text.split(" ");
   const trigger =
@@ -39,7 +41,8 @@ export function SplitWords({ text, as: Tag = "span", className, delay = 0, stagg
         transition={{ staggerChildren: reduce ? 0 : stagger, delayChildren: delay }}
       >
         {words.map((w, i) => (
-          <span key={`${w}-${i}`} className="inline-block overflow-hidden pb-[0.2em] -mb-[0.2em] pr-[0.08em] -mr-[0.08em] align-bottom">
+          <Fragment key={`${w}-${i}`}>
+          <span className="inline-block overflow-hidden pb-[0.2em] -mb-[0.2em] pr-[0.08em] -mr-[0.08em] align-bottom">
             <motion.span
               className={`inline-block will-change-transform ${accent.includes(i) ? "font-serif italic font-normal tracking-[-0.02em]" : ""}`}
               variants={{
@@ -49,8 +52,10 @@ export function SplitWords({ text, as: Tag = "span", className, delay = 0, stagg
             >
               {w}
             </motion.span>
-            {i < words.length - 1 ? " " : null}
+            {i < words.length - 1 && !breakAfter.includes(i) ? " " : null}
           </span>
+          {breakAfter.includes(i) ? <br /> : null}
+          </Fragment>
         ))}
       </motion.span>
     </Tag>
