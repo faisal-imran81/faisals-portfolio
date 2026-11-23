@@ -43,7 +43,8 @@ export function Contact() {
           id="contact-title"
           text="Got a project or a role? Let's talk."
           accent={[2]}
-          className="mt-10 max-w-[14ch] display-xl text-balance"
+          breakAfter={[5]}
+          className="mt-10 display-lg"
         />
 
         <div className="mt-16 grid gap-12 md:mt-24 lg:grid-cols-12 lg:gap-8">
