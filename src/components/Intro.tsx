@@ -59,7 +59,7 @@ export function Intro() {
             <span>Portfolio 2026</span>
           </div>
           <div className="flex items-end justify-between gap-6">
-            <div className="relative h-[clamp(3rem,12vw,9rem)] overflow-hidden">
+            <div className="relative h-[clamp(2.75rem,7.5vw,6.5rem)] overflow-hidden">
               <AnimatePresence mode="popLayout">
                 {step >= 0 && (
                   <motion.span
