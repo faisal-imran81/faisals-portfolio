@@ -47,14 +47,14 @@ export function Contact() {
           className="mt-10 display-lg"
         />
 
-        <div className="mt-16 grid gap-12 md:mt-24 lg:grid-cols-12 lg:gap-8">
+        <div className="mt-12 grid gap-12 md:mt-16 lg:grid-cols-12 lg:gap-8">
           <Reveal className="lg:col-span-7">
             <p className="label-mono">Email me</p>
             <div className="mt-4 flex flex-wrap items-center gap-4">
               <Magnetic strength={0.15}>
                 <a
                   href={`mailto:${site.email}`}
-                  className="group relative inline-block break-all text-[clamp(1.35rem,3.6vw,3rem)] font-medium tracking-[-0.035em] text-paper"
+                  className="group relative inline-block break-all text-[clamp(1.25rem,2.4vw,2rem)] font-medium tracking-[-0.025em] text-paper"
                 >
                   {site.email}
                   <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-100 bg-line-strong" />
