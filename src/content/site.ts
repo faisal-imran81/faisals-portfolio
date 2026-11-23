@@ -256,11 +256,6 @@ export const projects: Project[] = [
       "Each journal entry gets a sentiment label and a reflection prompt from the AI.",
       "A keyword check catches crisis messages and shows links to real helplines.",
     ],
-    metrics: [
-      { label: "Streaming chat", value: "SSE" },
-      { label: "Mood chart", value: "7-day" },
-      { label: "Breathing exercise", value: "4-7-8" },
-    ],
     source: "https://github.com/faisal-imran81/Solace",
     viz: "wellness",
     accent: "#9db7ff",
