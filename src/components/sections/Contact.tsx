@@ -25,7 +25,6 @@ export function Contact() {
   const socials = [
     { label: "GitHub", href: site.github, handle: `@${site.githubHandle}` },
     { label: "LinkedIn", href: site.linkedin, handle: "in/faisal-imran" },
-    { label: "Email", href: `mailto:${site.email}`, handle: site.email },
   ];
 
   return (
