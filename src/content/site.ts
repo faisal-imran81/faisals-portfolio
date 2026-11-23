@@ -150,3 +150,184 @@ export const arsenal: SkillGroup[] = [
     items: [{ name: "C++" }, { name: "Python" }, { name: "Assembly" }],
   },
 ];
+
+export type ProjectStatus = "In development" | "Live" | "Coursework" | "Built";
+
+export type Project = {
+  id: string;
+  index: string;
+  name: string;
+  kicker: string;
+  summary: string;
+  status: ProjectStatus;
+  context?: string;
+  year: string;
+  stack: string[];
+  highlights: string[];
+  metrics?: { label: string; value: string }[];
+  source?: string;
+  live?: string;
+  viz: "pipeline" | "cards" | "wellness" | "levels" | "chat" | "crud" | "cnn";
+  accent: string;
+  featured?: boolean;
+};
+
+export const projects: Project[] = [
+  {
+    id: "launchflow",
+    index: "01",
+    name: "LaunchFlow",
+    kicker: "Final Year Project",
+    summary:
+      "My final year project, and I'm still building it. You paste in a GitHub repo link. LaunchFlow works out the stack, writes a Dockerfile and a GitHub Actions workflow, builds the image, pushes it to AWS ECR and deploys it to EC2. The logs stream back to your browser while it runs.",
+    status: "In development",
+    context: "Final Year Project at FAST-NUCES. Still in progress.",
+    year: "Since 2026",
+    stack: ["React 19", "Express 5", "Node.js", "Groq", "Supabase", "Docker", "AWS ECR", "AWS EC2", "Nginx", "SSE"],
+    highlights: [
+      "Detects the stack by looking at the repo's files. Right now it handles Node.js, Python, Go, Java, Ruby, PHP and Rust.",
+      "Uses an LLM through Groq to write the Dockerfile and CI workflow, then runs a real Docker build, pushes to ECR and deploys to EC2.",
+      "Streams build and container logs to the browser in real time with Server-Sent Events.",
+      "Writes the Nginx reverse proxy config for you and keeps a history of every deployment.",
+    ],
+    metrics: [
+      { label: "Tests passing", value: "691" },
+      { label: "Pipeline steps", value: "6" },
+      { label: "Stacks detected", value: "7" },
+    ],
+    source: "https://github.com/faisal-imran81/launchflow",
+    viz: "pipeline",
+    accent: "#c8f135",
+    featured: true,
+  },
+  {
+    id: "solace",
+    index: "02",
+    name: "Solace",
+    kicker: "Mental wellness app",
+    summary:
+      "A mental wellness app with an AI chat, a mood tracker and a journal. If someone types something that sounds like a crisis, it shows them helpline links straight away.",
+    status: "Live",
+    year: "2026",
+    stack: ["Next.js 16", "React Three Fiber", "FastAPI", "Groq", "Prisma", "PostgreSQL", "Clerk", "Railway"],
+    highlights: [
+      "Chat replies stream in word by word over SSE, using LLaMA 3.1 through Groq.",
+      "Each journal entry gets a sentiment label and a reflection prompt from the AI.",
+      "A keyword check catches crisis messages and shows links to real helplines.",
+    ],
+    metrics: [
+      { label: "Streaming chat", value: "SSE" },
+      { label: "Mood chart", value: "7-day" },
+      { label: "Breathing exercise", value: "4-7-8" },
+    ],
+    source: "https://github.com/faisal-imran81/Solace",
+    live: "https://solace-web-fm4f-gamma.vercel.app",
+    viz: "wellness",
+    accent: "#9db7ff",
+    featured: true,
+  },
+  {
+    id: "elucid",
+    index: "03",
+    name: "Elucid",
+    kicker: "AI tutor",
+    summary:
+      "Type in a topic and choose how deep the explanation should go, from ELI5 up to PhD level. It also saves your history and bookmarks, and keeps track of your daily learning streak.",
+    status: "Live",
+    year: "2026",
+    stack: ["React Native", "Expo SDK 54", "Groq", "Supabase", "react-native-web"],
+    highlights: [
+      "A difficulty selector with five levels that changes how the explanation is written.",
+      "Guest mode, so people can try it without making an account.",
+      "One React Native codebase that runs on iOS, Android and the web.",
+    ],
+    source: "https://github.com/faisal-imran81/Elucid-AI-Tutor",
+    live: "https://elucid-ai-tutor.vercel.app",
+    viz: "levels",
+    accent: "#7ef0d0",
+  },
+  {
+    id: "muslimeen",
+    index: "04",
+    name: "Muslimeen",
+    kicker: "Qur'an chat app",
+    summary:
+      "A chat app for asking questions about the Qur'an. Each answer comes with the Surah and verse it's based on, and your conversations are saved so you can come back to them.",
+    status: "Live",
+    year: "2026",
+    stack: ["React Native", "Expo Router", "TypeScript", "Supabase", "Groq"],
+    highlights: [
+      "Answers include the Surah and verse they refer to.",
+      "Chat sessions are stored in Supabase, indexed by user, session and time.",
+      "Email and password sign-in, with dark and light themes.",
+    ],
+    source: "https://github.com/faisal-imran81/Muslimeen",
+    live: "https://quran-chat-app-seven.vercel.app/",
+    viz: "chat",
+    accent: "#e9d8a6",
+  },
+  {
+    id: "ta-platform",
+    index: "05",
+    name: "TA & Faculty Platform",
+    kicker: "MERN project",
+    summary:
+      "A web app where teaching assistants and faculty can manage users, announcements, tasks, office hours and shared study material in one place.",
+    status: "Built",
+    year: "2026",
+    stack: ["React", "React Router", "Node.js", "Express", "MongoDB", "Mongoose"],
+    highlights: [
+      "Five REST resources, each with full create, read, update and delete.",
+      "Announcements have priority levels, and tasks have status tracking.",
+    ],
+    source: "https://github.com/faisal-imran81/ta-faculty-platform",
+    viz: "crud",
+    accent: "#d4a5ff",
+  },
+  {
+    id: "cifar",
+    index: "06",
+    name: "Robust CIFAR-10",
+    kicker: "Deep Learning coursework",
+    summary:
+      "A course assignment where I had to train an image classifier on only 500 CIFAR-10 images, then test it on a corrupted version of the test set. I built a small CNN with an Inception-style module from scratch, without any pretrained weights.",
+    status: "Coursework",
+    year: "Fall 2026",
+    stack: ["PyTorch", "torchvision", "NumPy", "Colab"],
+    highlights: [
+      "The model has 46,674 parameters, well under the 1 million limit.",
+      "Photometric augmentation helped the most with the corrupted images.",
+      "Accuracy on the corrupted test set went from 0.222 to 0.261. Overfitting was the main problem with so little data.",
+    ],
+    source: "https://github.com/faisal-imran81/dlp-assignment2-cifar10",
+    viz: "cnn",
+    accent: "#ff8f8f",
+  },
+  {
+    id: "flashforge",
+    index: "07",
+    name: "FlashForge AI",
+    kicker: "FlyRank capstone",
+    summary:
+      "Paste in your lecture notes or just a topic, and it gives you a set of flashcards to study from. I built it as my capstone at FlyRank. I picked this problem because I've wasted a lot of time making flashcards by hand myself.",
+    status: "Live",
+    context: "My capstone project for the FlyRank AI internship.",
+    year: "2026",
+    stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind v4", "Groq SDK", "Vitest", "Vercel"],
+    highlights: [
+      "Sends your notes to an LLM through Groq and gets back question and answer pairs.",
+      "Has 20 tests written with Vitest and Testing Library, plus a README that gets a new developer running in under 5 minutes.",
+      "I ran Lighthouse on it and got 90 for performance, 95 for accessibility and 100 for SEO.",
+    ],
+    metrics: [
+      { label: "Performance", value: "90" },
+      { label: "Accessibility", value: "95" },
+      { label: "SEO", value: "100" },
+      { label: "Tests", value: "20" },
+    ],
+    source: "https://github.com/faisal-imran81/flashforge-ai",
+    live: "https://flashforge-ai-ten.vercel.app",
+    viz: "cards",
+    accent: "#ffb86b",
+  },
+];
