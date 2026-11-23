@@ -28,7 +28,7 @@ export function Arsenal() {
             <Reveal key={s.name} delay={i * 0.08} className="bg-ink">
               <div className="group relative flex h-full flex-col justify-between gap-16 p-6 transition-colors duration-500 hover:bg-ink-2 md:p-8">
                 <div className="flex items-center justify-between label-mono">
-                  <span>Top skill 0{i + 1}</span>
+                  <span>Top skill</span>
                   <span className="text-acid opacity-0 transition-opacity duration-500 group-hover:opacity-100">●</span>
                 </div>
                 <span className="text-[clamp(2rem,3.4vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.04em] transition-colors duration-500 group-hover:text-acid">
@@ -49,8 +49,7 @@ export function Arsenal() {
                   onMouseEnter={() => setHover(g.id)}
                   className={`grid gap-4 border-b hairline py-6 transition-opacity duration-500 md:grid-cols-12 md:gap-6 md:py-8 ${dim ? "opacity-35" : "opacity-100"}`}
                 >
-                  <div className="flex items-baseline gap-4 md:col-span-3">
-                    <span className="font-mono text-[0.6875rem] tracking-[0.14em] text-mute">{String(gi + 2).padStart(2, "0")}</span>
+                  <div className="md:col-span-3">
                     <h3 className="text-2xl font-medium tracking-[-0.03em]">{g.label}</h3>
                   </div>
                   <p className="text-sm text-mute md:col-span-3 md:pt-1.5">{g.note}</p>
