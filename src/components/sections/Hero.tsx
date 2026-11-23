@@ -60,8 +60,8 @@ export function Hero() {
             play={done}
             delay={0.15}
             stagger={0.08}
-            accent={[6]}
-            breakAfter={[2, 4]}
+            accent={[4]}
+            breakAfter={[2]}
             className="text-[clamp(2.5rem,5vw,5.25rem)] font-semibold leading-[1.02] tracking-[-0.04em] text-balance"
           />
 

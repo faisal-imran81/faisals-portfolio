@@ -9,7 +9,7 @@ export const site = {
   initials: "FI",
   role: "Software Engineer",
   positioning: "Software Engineer · CS Major at FAST · DevOps Enthusiast",
-  headline: "I build things. Then make them work.",
+  headline: "From git push to production.",
   intro:
     "I'm a CS student at FAST-NUCES. I build web projects, enjoy solving the problems behind them, and keep learning about backend development and DevOps along the way.",
   tagline: ["Build", "Break", "Learn", "Ship"] as const,
