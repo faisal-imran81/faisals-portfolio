@@ -208,7 +208,7 @@ export const projects: Project[] = [
     metrics: [
       { label: "Team members", value: "3" },
       { label: "Core modules", value: "5" },
-      { label: "API operations", value: "38" },
+      { label: "My part", value: "Frontend" },
     ],
     viz: "gateway",
     accent: "#a5b4fc",
