@@ -449,20 +449,15 @@ export const journey: JourneyItem[] = [
 ];
 
 export const exploring = {
-  headline: "Learning what happens after git push.",
-  body: "Most of my projects so far have been frontend-heavy. Now I want to understand the part that comes after: containers, cloud servers, CI pipelines and Linux. LaunchFlow is where I'm practising all of it.",
-  tracks: [
-    { name: "Containers", detail: "Writing Dockerfiles, building images and pushing them to a registry", tool: "Docker" },
-    { name: "Cloud", detail: "EC2 and ECR on the AWS free tier", tool: "AWS" },
-    { name: "Pipelines", detail: "GitHub Actions workflows that build and deploy", tool: "CI/CD" },
-    { name: "Servers", detail: "Linux basics and setting up Nginx as a reverse proxy", tool: "Linux" },
+  headline: "Going deeper into infrastructure.",
+  body: "Most of my projects started on the frontend. LaunchFlow pushed me into what comes after: containers, cloud servers, CI pipelines and Linux. Here is what I've actually done so far, and what I'm learning next.",
+  done: [
+    "Built Docker images from Node.js using the Docker Engine API",
+    "Pushed images to AWS ECR and ran the containers on EC2",
+    "Generated Nginx reverse proxy configs for deployed apps",
+    "Generated GitHub Actions workflows for build and deploy",
+    "Streamed build and container logs to the browser over SSE",
   ],
+  next: ["Linux fundamentals", "CI/CD pipelines", "Cloud infrastructure"],
   resources: ["roadmap.sh/devops", "DevOps Zero to Hero"],
-  terminal: [
-    { cmd: "git push origin main", out: "→ workflow triggered" },
-    { cmd: "docker build -t launchflow:latest .", out: "✓ image built" },
-    { cmd: "aws ecr get-login-password | docker login …", out: "✓ login succeeded" },
-    { cmd: "docker push <ecr>/launchflow:latest", out: "✓ pushed" },
-    { cmd: "ssh ec2 'docker run -d -p 80:3000 launchflow'", out: "✓ container live" },
-  ],
 };
