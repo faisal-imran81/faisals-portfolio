@@ -42,7 +42,7 @@ export function About() {
             </Reveal>
             <Reveal delay={0.15}>
               <blockquote className="mt-12 border-l border-acid/60 pl-6 font-serif text-2xl italic leading-snug text-paper-dim md:text-3xl">
-                “I&apos;m not perfect at coding yet, but I&apos;m getting better every single day.”
+                “Every project I&apos;ve shipped taught me something a tutorial couldn&apos;t.”
               </blockquote>
             </Reveal>
           </div>
