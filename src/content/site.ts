@@ -396,7 +396,6 @@ export type JourneyItem = {
   date: string;
   title: string;
   body: string;
-  tag: (typeof site.tagline)[number];
   future?: boolean;
 };
 
@@ -405,55 +404,46 @@ export const journey: JourneyItem[] = [
     date: "2021 to 2023",
     title: "Punjab Group of Colleges",
     body: "Before university. This is when I first got curious about how software works.",
-    tag: "Learn",
   },
   {
     date: "Aug 2023",
     title: "Started my BS in Computer Science at FAST-NUCES",
     body: "I began with Python and C++, and later got into Assembly and how computers work underneath.",
-    tag: "Learn",
   },
   {
     date: "During my degree",
     title: "Python for Data Science, AI & Development",
     body: "A certification that got me started with data and AI.",
-    tag: "Learn",
   },
   {
     date: "Jun 2026",
     title: "Joined FlyRank AI as an intern",
     body: "Frontend work in React and Tailwind, and learning how to use AI tools properly.",
-    tag: "Build",
   },
   {
     date: "Jul 2026",
     title: "Shipped four projects in one month",
     body: "Muslimeen, Elucid, Solace and the TA & Faculty platform. Three of them were deployed.",
-    tag: "Ship",
   },
   {
     date: "Aug 2026",
     title: "Shipped FlashForge AI",
     body: "An AI flashcard app: tested, checked with Lighthouse and deployed on Vercel.",
-    tag: "Ship",
   },
   {
     date: "Fall 2026",
     title: "Started SecureCode Navigator, my final year project",
     body: "A three-member team project at FAST-NUCES: a secure AI assistant for private codebases. I'm building the developer workspace.",
-    tag: "Build",
   },
   {
     date: "Sep 2026",
     title: "Started LaunchFlow",
     body: "My own deployment platform, and how I'm learning Docker, AWS and CI/CD, mostly by breaking deploys and fixing them. Version 1 is done; version 2 is in progress.",
-    tag: "Break",
   },
   {
     date: "Jun 2027",
     title: "Graduating (expected)",
     body: "BS Computer Science from FAST-NUCES.",
-    tag: "Ship",
     future: true,
   },
 ];

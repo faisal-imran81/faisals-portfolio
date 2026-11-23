@@ -6,13 +6,6 @@ import { journey } from "@/content/site";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-const tagStyle: Record<string, string> = {
-  Build: "text-paper border-line-strong",
-  Break: "text-paper border-line-strong font-serif italic normal-case tracking-normal text-[0.8125rem]",
-  Learn: "text-paper-dim border-line-strong",
-  Ship: "text-acid border-acid/40",
-};
-
 export function Journey() {
   const ref = useRef<HTMLOListElement>(null);
   const reduce = useReducedMotion();
@@ -47,12 +40,7 @@ export function Journey() {
                   delay={0.05}
                   className={`${right ? "md:col-start-2" : "md:col-start-1 md:text-right"}`}
                 >
-                  <div className={`flex flex-wrap items-center gap-3 ${right ? "" : "md:justify-end"}`}>
-                    <span className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-mute">{j.date}</span>
-                    <span className={`rounded-full border px-2 py-0.5 font-mono text-[0.5625rem] uppercase tracking-[0.14em] ${tagStyle[j.tag]}`}>
-                      {j.tag}
-                    </span>
-                  </div>
+                  <span className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-mute">{j.date}</span>
                   <h3 className={`mt-3 text-xl font-medium tracking-[-0.02em] md:text-2xl ${j.future ? "text-paper-dim" : "text-paper"}`}>
                     {j.title}
                   </h3>
