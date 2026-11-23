@@ -333,11 +333,10 @@ export const projects: Project[] = [
     id: "flashforge",
     index: "08",
     name: "FlashForge AI",
-    kicker: "FlyRank capstone",
+    kicker: "AI flashcards app",
     summary:
-      "Paste in your lecture notes or just a topic, and it gives you a set of flashcards to study from. I built it as my capstone at FlyRank. I picked this problem because I've wasted a lot of time making flashcards by hand myself.",
+      "Paste in your lecture notes or just a topic, and it gives you a set of flashcards to study from. I picked this problem because I've wasted a lot of time making flashcards by hand myself.",
     status: "Live",
-    context: "My capstone project for the FlyRank AI internship.",
     year: "2026",
     stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind v4", "Groq SDK", "Vitest", "Vercel"],
     highlights: [
@@ -377,7 +376,6 @@ export const internship = {
       items: ["Structured prompting", "AI Fluency assignments", "Setting up AI tools and auditing workflows"],
     },
   ],
-  capstoneId: "flashforge",
 };
 
 export type JourneyItem = {
@@ -421,8 +419,8 @@ export const journey: JourneyItem[] = [
   },
   {
     date: "Aug 2026",
-    title: "Finished FlashForge AI, my FlyRank capstone",
-    body: "Tested, checked with Lighthouse and deployed on Vercel.",
+    title: "Shipped FlashForge AI",
+    body: "An AI flashcard app: tested, checked with Lighthouse and deployed on Vercel.",
     tag: "Ship",
   },
   {

@@ -1,13 +1,12 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import { internship, projects } from "@/content/site";
+import { internship } from "@/content/site";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Experience() {
   const reduce = useReducedMotion();
-  const capstone = projects.find((p) => p.id === internship.capstoneId);
 
   return (
     <section id="experience" className="relative border-t hairline bg-ink-2/40 py-28 md:py-40" aria-labelledby="experience-title">
@@ -75,28 +74,6 @@ export function Experience() {
               ))}
             </div>
 
-            {capstone && (
-              <Reveal delay={0.25}>
-                <a
-                  href={`#project-${capstone.id}`}
-                  className="group mt-6 flex items-center justify-between gap-6 border hairline p-6 transition-colors duration-500 hover:border-paper/30 hover:bg-ink md:p-8"
-                >
-                  <div>
-                    <p className="label-mono">My capstone project</p>
-                    <p className="mt-3 text-2xl font-semibold tracking-[-0.04em] md:text-3xl">{capstone.name}</p>
-                    <p className="mt-2 max-w-md text-sm text-mute">
-                      I designed, built and shipped this on my own as my internship capstone. Click to see the project.
-                    </p>
-                  </div>
-                  <span
-                    aria-hidden
-                    className="flex size-12 shrink-0 items-center justify-center rounded-full border border-line-strong transition-all duration-500 group-hover:border-acid group-hover:bg-acid group-hover:text-ink"
-                  >
-                    ↗
-                  </span>
-                </a>
-              </Reveal>
-            )}
           </div>
         </div>
       </div>
