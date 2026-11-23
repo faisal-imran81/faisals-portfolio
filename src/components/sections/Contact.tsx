@@ -105,19 +105,18 @@ export function Contact() {
         </div>
 
         {/* Final signature */}
-        <div className="mt-28 border-t hairline pt-10 md:mt-40" aria-label="Build, Break, Learn, Ship.">
+        <div className="mt-20 border-t hairline pt-10 md:mt-28" aria-label="Build, Break, Learn, Ship.">
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 md:grid-cols-4" aria-hidden>
             {site.tagline.map((t, i) => (
               <Reveal key={t} delay={i * 0.12} y={60}>
                 <div className="flex items-baseline gap-3">
                   <span className="font-mono text-[0.6875rem] tracking-[0.14em] text-mute">0{i + 1}</span>
                   <span
-                    className={`text-[clamp(2.75rem,8.5vw,9rem)] leading-[0.9] tracking-[-0.06em] ${
+                    className={`text-[clamp(1.75rem,3.6vw,3.25rem)] leading-[1.05] tracking-[-0.035em] ${
                       i === 1 ? "font-serif italic font-normal text-paper-dim" : i === 3 ? "font-semibold text-acid" : "font-semibold"
                     }`}
                   >
-                    {t}
-                    {i < 3 ? <span className="text-mute-2">.</span> : <span className="text-paper">.</span>}
+                    {t}.
                   </span>
                 </div>
               </Reveal>
