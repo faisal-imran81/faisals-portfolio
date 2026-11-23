@@ -130,19 +130,19 @@ body::before {
 /* Display type scale — fluid, tight, editorial */
 @utility display-xl {
   font-size: clamp(3rem, 9.5vw, 10rem);
-  line-height: 0.86;
+  line-height: 1;
   letter-spacing: -0.055em;
   font-weight: 600;
 }
 @utility display-lg {
   font-size: clamp(2.5rem, 6.6vw, 6.5rem);
-  line-height: 0.92;
+  line-height: 1.05;
   letter-spacing: -0.045em;
   font-weight: 600;
 }
 @utility display-md {
   font-size: clamp(2rem, 4.2vw, 4rem);
-  line-height: 0.98;
+  line-height: 1.1;
   letter-spacing: -0.04em;
   font-weight: 600;
 }
