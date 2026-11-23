@@ -9,7 +9,6 @@ import { Experience } from "@/components/sections/Experience";
 import { Journey } from "@/components/sections/Journey";
 import { Exploring } from "@/components/sections/Exploring";
 import { Contact } from "@/components/sections/Contact";
-import { MotifMarquee } from "@/components/ui/Motif";
 
 export default function Home() {
   return (
@@ -18,11 +17,9 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
-        <MotifMarquee />
         <About />
         <Arsenal />
         <Projects />
-        <MotifMarquee />
         <Experience />
         <Journey />
         <Exploring />
