@@ -109,8 +109,7 @@ export function Contact() {
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 md:grid-cols-4" aria-hidden>
             {site.tagline.map((t, i) => (
               <Reveal key={t} delay={i * 0.12} y={60}>
-                <div className="flex items-baseline gap-3">
-                  <span className="font-mono text-[0.6875rem] tracking-[0.14em] text-mute">0{i + 1}</span>
+                <div>
                   <span
                     className={`text-[clamp(1.75rem,3.6vw,3.25rem)] leading-[1.05] tracking-[-0.035em] ${
                       i === 1 ? "font-serif italic font-normal text-paper-dim" : i === 3 ? "font-semibold text-acid" : "font-semibold"
