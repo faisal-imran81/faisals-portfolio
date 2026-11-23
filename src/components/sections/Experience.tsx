@@ -24,7 +24,7 @@ export function Experience() {
                   Jun to Aug 2026
                 </span>
               </div>
-              <h3 className="mt-12 text-[clamp(2.75rem,5.5vw,5rem)] font-semibold leading-[0.9] tracking-[-0.05em]">
+              <h3 className="mt-12 text-[clamp(2.25rem,4vw,3.5rem)] font-semibold leading-[1.02] tracking-[-0.04em]">
                 {internship.company}
               </h3>
               <p className="mt-4 text-lg text-paper">
