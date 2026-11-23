@@ -191,3 +191,11 @@ body::before {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Intro fail-safe: if hydration never happens, the overlay still gets out of the way. */
+@keyframes intro-failsafe {
+  to { opacity: 0; visibility: hidden; }
+}
+.intro-failsafe {
+  animation: intro-failsafe 0.4s ease 4s forwards;
+}
