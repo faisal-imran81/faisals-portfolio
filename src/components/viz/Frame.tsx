@@ -7,11 +7,7 @@ export function VizFrame({ label, children, accent, className = "" }: { label: s
       <div className="pointer-events-none absolute inset-0 blueprint-grid-fine" />
       <div className="relative flex items-center justify-between border-b hairline px-4 py-2.5 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-mute">
         <span>{label}</span>
-        <span className="flex items-center gap-1.5">
-          <span className="size-1.5 rounded-full" style={{ background: accent }} />
-          <span className="size-1.5 rounded-full bg-mute-2" />
-          <span className="size-1.5 rounded-full bg-mute-2" />
-        </span>
+        <span className="size-1.5 rounded-full" style={{ background: accent }} aria-hidden />
       </div>
       <div className="relative">{children}</div>
     </div>
