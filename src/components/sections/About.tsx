@@ -94,9 +94,8 @@ export function About() {
                         transition={{ type: "spring", stiffness: 300, damping: 34 }}
                       />
                     )}
-                    <span className="font-mono text-[0.6875rem] tracking-[0.14em] text-mute">0{i + 1}</span>
                     <span
-                      className={`mt-6 text-5xl tracking-[-0.05em] transition-colors duration-500 md:mt-auto md:text-6xl ${i === 1 ? "font-serif italic" : "font-semibold"} ${on ? (i === 3 ? "text-acid" : "text-paper") : "text-paper-dim"}`}
+                      className={`mt-0 text-5xl tracking-[-0.05em] transition-colors duration-500 md:mt-auto md:text-6xl ${i === 1 ? "font-serif italic" : "font-semibold"} ${on ? (i === 3 ? "text-acid" : "text-paper") : "text-paper-dim"}`}
                     >
                       {m.step}
                     </span>
