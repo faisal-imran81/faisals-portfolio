@@ -3,7 +3,6 @@
 import { AnimatePresence, motion, useMotionValueEvent, useScroll, useSpring } from "motion/react";
 import { useEffect, useState } from "react";
 import { navItems, site } from "@/content/site";
-import { useZonedTime } from "@/lib/hooks";
 
 function Mark() {
   return (
@@ -22,7 +21,6 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const { scrollY, scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 30, mass: 0.3 });
-  const time = useZonedTime(site.timezone);
 
   useMotionValueEvent(scrollY, "change", (y) => {
     const prev = scrollY.getPrevious() ?? 0;
@@ -95,9 +93,6 @@ export function Nav() {
           </ul>
 
           <div className="flex items-center gap-4">
-            <span className="hidden font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-mute md:inline" suppressHydrationWarning>
-              FSD <span className="tabular-nums text-paper-dim">{time || "--:--"}</span> PKT
-            </span>
             <a
               href={`mailto:${site.email}`}
               className="hidden rounded-full border border-line-strong px-4 py-2 text-[0.8125rem] text-paper transition-colors hover:border-acid hover:text-acid sm:inline-block"
