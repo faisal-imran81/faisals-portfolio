@@ -30,7 +30,7 @@ export function ProjectViz({ project }: { project: Project }) {
     cnn: <CnnViz accent={a} />,
   }[project.viz];
   return (
-    <VizFrame label={`Fig. ${project.index}: ${labels[project.viz]}`} accent={a}>
+    <VizFrame label={labels[project.viz]} accent={a}>
       {project.viz === "pipeline" ? <div className="p-4 sm:p-6">{body}</div> : body}
     </VizFrame>
   );
