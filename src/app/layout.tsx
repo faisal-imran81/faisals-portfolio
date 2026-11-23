@@ -89,6 +89,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       suppressHydrationWarning
     >
       <body>
+        {/* Without JavaScript, scroll-reveal animations never run: show their content as-is. */}
+        <noscript>
+          <style
+            dangerouslySetInnerHTML={{
+              __html:
+                '[style*="opacity:0"],main g[opacity="0"]{opacity:1!important}[style*="translateY("],[style*="scale(0.96)"],main [style*="scaleX(0)"],main [style*="scaleY(0)"]{transform:none!important}',
+            }}
+          />
+        </noscript>
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-acid focus:px-4 focus:py-2 focus:text-ink"
