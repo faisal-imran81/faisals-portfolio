@@ -45,3 +45,108 @@ export const navItems = [
   { id: "exploring", label: "Learning" },
   { id: "contact", label: "Contact" },
 ] as const;
+
+export const mindset = [
+  {
+    step: "Build",
+    line: "Get a working version out.",
+    body: "I'd rather have something rough that runs than a perfect plan. Most of what I know, I learned by building first and figuring it out as I went.",
+  },
+  {
+    step: "Break",
+    line: "Break it before someone else does.",
+    body: "Bad inputs, failing tests, deploys that don't come up. I want to find these problems on my own machine, not after someone starts using it.",
+  },
+  {
+    step: "Learn",
+    line: "Understand why it broke.",
+    body: "Fixing the bug is only half of it. I try to understand what actually went wrong, so I don't repeat it in the next project.",
+  },
+  {
+    step: "Ship",
+    line: "Put it where people can use it.",
+    body: "A live link and a README someone else can follow. Until then, it's just code sitting on my laptop.",
+  },
+] as const;
+
+export type SkillGroup = {
+  id: string;
+  label: string;
+  note: string;
+  items: { name: string; level?: "core" | "learning" }[];
+};
+
+export const arsenal: SkillGroup[] = [
+  {
+    id: "core",
+    label: "Core",
+    note: "What I use the most",
+    items: [
+      { name: "TypeScript", level: "core" },
+      { name: "Next.js", level: "core" },
+      { name: "Three.js", level: "core" },
+      { name: "React", level: "core" },
+    ],
+  },
+  {
+    id: "interface",
+    label: "Frontend",
+    note: "Web and mobile interfaces",
+    items: [
+      { name: "React Native" },
+      { name: "Expo" },
+      { name: "Tailwind CSS" },
+      { name: "Framer Motion" },
+      { name: "React Three Fiber" },
+      { name: "JavaScript" },
+    ],
+  },
+  {
+    id: "systems",
+    label: "Backend",
+    note: "APIs and databases behind my apps",
+    items: [
+      { name: "Node.js" },
+      { name: "Express" },
+      { name: "Python" },
+      { name: "FastAPI" },
+      { name: "Supabase" },
+      { name: "PostgreSQL" },
+      { name: "MongoDB" },
+      { name: "Prisma" },
+    ],
+  },
+  {
+    id: "ai",
+    label: "AI",
+    note: "Adding AI features to my projects",
+    items: [
+      { name: "Groq API" },
+      { name: "Gemini API" },
+      { name: "Anthropic Claude" },
+      { name: "OpenRouter" },
+      { name: "Structured prompting" },
+      { name: "PyTorch (coursework)" },
+    ],
+  },
+  {
+    id: "infra",
+    label: "DevOps",
+    note: "Still learning these, mostly through LaunchFlow",
+    items: [
+      { name: "Docker", level: "learning" },
+      { name: "AWS EC2, S3 and ECR", level: "learning" },
+      { name: "Linux", level: "learning" },
+      { name: "GitHub Actions", level: "learning" },
+      { name: "Nginx", level: "learning" },
+      { name: "Git" },
+      { name: "Vercel" },
+    ],
+  },
+  {
+    id: "foundations",
+    label: "Foundations",
+    note: "What I started with at university",
+    items: [{ name: "C++" }, { name: "Python" }, { name: "Assembly" }],
+  },
+];
