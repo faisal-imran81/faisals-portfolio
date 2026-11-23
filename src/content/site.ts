@@ -331,3 +331,104 @@ export const projects: Project[] = [
     accent: "#ffb86b",
   },
 ];
+
+export const internship = {
+  company: "FlyRank AI",
+  role: "Intern",
+  track: "Frontend and AI Fluency",
+  start: "Jun 2026",
+  end: "Aug 2026",
+  months: ["Jun", "Jul", "Aug"],
+  summary:
+    "I spent the summer at FlyRank doing two things: frontend work with React and Tailwind, and learning to use AI tools properly in my day-to-day work. At the end, I built and shipped my own capstone project.",
+  work: [
+    {
+      area: "Frontend",
+      items: ["Frontend development with React and Tailwind CSS", "Building settings forms", "Client-side form validation"],
+    },
+    {
+      area: "AI Fluency",
+      items: ["Structured prompting", "AI Fluency assignments", "Setting up AI tools and auditing workflows"],
+    },
+  ],
+  capstoneId: "flashforge",
+};
+
+export type JourneyItem = {
+  date: string;
+  title: string;
+  body: string;
+  tag: (typeof site.tagline)[number];
+  future?: boolean;
+};
+
+export const journey: JourneyItem[] = [
+  {
+    date: "2021 to 2023",
+    title: "Punjab Group of Colleges",
+    body: "Before university. This is when I first got curious about how software works.",
+    tag: "Learn",
+  },
+  {
+    date: "Aug 2023",
+    title: "Started my BS in Computer Science at FAST-NUCES",
+    body: "I began with Python and C++, and later got into Assembly and how computers work underneath.",
+    tag: "Learn",
+  },
+  {
+    date: "During my degree",
+    title: "Python for Data Science, AI & Development",
+    body: "A certification that got me started with data and AI.",
+    tag: "Learn",
+  },
+  {
+    date: "Jun 2026",
+    title: "Joined FlyRank AI as an intern",
+    body: "Frontend work in React and Tailwind, and learning how to use AI tools properly.",
+    tag: "Build",
+  },
+  {
+    date: "Jul 2026",
+    title: "Shipped four projects in one month",
+    body: "Muslimeen, Elucid, Solace and the TA & Faculty platform. Three of them are live.",
+    tag: "Ship",
+  },
+  {
+    date: "Aug 2026",
+    title: "Finished FlashForge AI, my FlyRank capstone",
+    body: "Tested, checked with Lighthouse and deployed on Vercel.",
+    tag: "Ship",
+  },
+  {
+    date: "Sep 2026",
+    title: "Started LaunchFlow",
+    body: "My final year project. It's how I'm learning Docker, AWS and CI/CD, mostly by breaking deploys and fixing them.",
+    tag: "Break",
+  },
+  {
+    date: "Jun 2027",
+    title: "Graduating (expected)",
+    body: "BS Computer Science from FAST-NUCES.",
+    tag: "Ship",
+    future: true,
+  },
+];
+
+export const exploring = {
+  headline: "Learning what happens after git push.",
+  body: "Most of my projects so far have been frontend-heavy. Now I want to understand the part that comes after: containers, cloud servers, CI pipelines and Linux. LaunchFlow is where I'm practising all of it.",
+  tracks: [
+    { name: "Containers", detail: "Writing Dockerfiles, building images and pushing them to a registry", tool: "Docker" },
+    { name: "Cloud", detail: "EC2, S3 and ECR on the AWS free tier", tool: "AWS" },
+    { name: "Pipelines", detail: "GitHub Actions workflows that build and deploy", tool: "CI/CD" },
+    { name: "Servers", detail: "Linux basics and setting up Nginx as a reverse proxy", tool: "Linux" },
+  ],
+  resources: ["roadmap.sh/devops", "DevOps Zero to Hero"],
+  terminal: [
+    { cmd: "git push origin main", out: "→ workflow triggered" },
+    { cmd: "docker build -t launchflow:latest .", out: "✓ image built" },
+    { cmd: "aws ecr get-login-password | docker login …", out: "✓ login succeeded" },
+    { cmd: "docker push <ecr>/launchflow:latest", out: "✓ pushed" },
+    { cmd: "ssh ec2 'docker run -d -p 80:3000 launchflow'", out: "✓ container live" },
+  ],
+};
