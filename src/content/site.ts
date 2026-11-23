@@ -151,7 +151,7 @@ export const arsenal: SkillGroup[] = [
   },
 ];
 
-export type ProjectStatus = "In development" | "Live" | "Coursework" | "Built";
+export type ProjectStatus = "In development" | "V2 in progress" | "Live" | "Coursework" | "Built";
 
 export type Project = {
   id: string;
@@ -167,21 +167,47 @@ export type Project = {
   metrics?: { label: string; value: string }[];
   source?: string;
   live?: string;
-  viz: "pipeline" | "cards" | "wellness" | "levels" | "chat" | "crud" | "cnn";
+  viz: "gateway" | "pipeline" | "cards" | "wellness" | "levels" | "chat" | "crud" | "cnn";
   accent: string;
   featured?: boolean;
 };
 
 export const projects: Project[] = [
   {
-    id: "launchflow",
+    id: "securecode",
     index: "01",
-    name: "LaunchFlow",
+    name: "SecureCode Navigator",
     kicker: "Final Year Project",
     summary:
-      "My final year project, and I'm still building it. You paste in a GitHub repo link. LaunchFlow works out the stack, writes a Dockerfile and a GitHub Actions workflow, builds the image, pushes it to AWS ECR and deploys it to EC2. The logs stream back to your browser while it runs.",
+      "Our final year project at FAST-NUCES, built by a team of three. It's a secure AI assistant for private GitHub repositories: developers can ask questions about a codebase, but the system checks their access before any code is retrieved, removes secrets before anything is indexed, and keeps an audit log of what the AI saw.",
     status: "In development",
-    context: "Final Year Project at FAST-NUCES. Still in progress.",
+    context: "Final Year Project at FAST-NUCES. Three-member team. I work on the developer workspace frontend.",
+    year: "Since 2026",
+    stack: ["React 19", "TypeScript", "Vite", "React Router", "Vitest", "FastAPI", "PostgreSQL"],
+    highlights: [
+      "Core modules: semantic search, an AI assistant, secret detection, redaction and repository-level access control.",
+      "Secrets are meant to be detected and redacted before code is indexed, and highly sensitive code is summarized instead of being sent to the LLM as raw source.",
+      "My part: the developer workspace in React and TypeScript, with an authorized repository directory, search and repository sync status.",
+      "The frontend is built against a locked OpenAPI contract shared with the backend, and my workspace code is tested with Vitest.",
+    ],
+    metrics: [
+      { label: "Team members", value: "3" },
+      { label: "Core modules", value: "5" },
+      { label: "API operations", value: "38" },
+    ],
+    viz: "gateway",
+    accent: "#a5b4fc",
+    featured: true,
+  },
+  {
+    id: "launchflow",
+    index: "02",
+    name: "LaunchFlow",
+    kicker: "Personal project",
+    summary:
+      "My own deployment platform. You paste in a GitHub repo link. LaunchFlow works out the stack, writes a Dockerfile and a GitHub Actions workflow, builds the image, pushes it to AWS ECR and deploys it to EC2. The logs stream back to your browser while it runs. Version 1 is complete, and I'm now working on version 2.",
+    status: "V2 in progress",
+    context: "Personal project. Version 1 is complete; version 2 is in progress.",
     year: "Since 2026",
     stack: ["React 19", "Express 5", "Node.js", "Groq", "Supabase", "Docker", "AWS ECR", "AWS EC2", "Nginx", "SSE"],
     highlights: [
@@ -202,7 +228,7 @@ export const projects: Project[] = [
   },
   {
     id: "solace",
-    index: "02",
+    index: "03",
     name: "Solace",
     kicker: "Mental wellness app",
     summary:
@@ -228,7 +254,7 @@ export const projects: Project[] = [
   },
   {
     id: "elucid",
-    index: "03",
+    index: "04",
     name: "Elucid",
     kicker: "AI tutor",
     summary:
@@ -248,7 +274,7 @@ export const projects: Project[] = [
   },
   {
     id: "muslimeen",
-    index: "04",
+    index: "05",
     name: "Muslimeen",
     kicker: "Qur'an chat app",
     summary:
@@ -268,7 +294,7 @@ export const projects: Project[] = [
   },
   {
     id: "ta-platform",
-    index: "05",
+    index: "06",
     name: "TA & Faculty Platform",
     kicker: "MERN project",
     summary:
@@ -286,7 +312,7 @@ export const projects: Project[] = [
   },
   {
     id: "cifar",
-    index: "06",
+    index: "07",
     name: "Robust CIFAR-10",
     kicker: "Deep Learning coursework",
     summary:
@@ -305,7 +331,7 @@ export const projects: Project[] = [
   },
   {
     id: "flashforge",
-    index: "07",
+    index: "08",
     name: "FlashForge AI",
     kicker: "FlyRank capstone",
     summary:
@@ -400,9 +426,15 @@ export const journey: JourneyItem[] = [
     tag: "Ship",
   },
   {
+    date: "Fall 2026",
+    title: "Started SecureCode Navigator, my final year project",
+    body: "A three-member team project at FAST-NUCES: a secure AI assistant for private codebases. I'm building the developer workspace.",
+    tag: "Build",
+  },
+  {
     date: "Sep 2026",
     title: "Started LaunchFlow",
-    body: "My final year project. It's how I'm learning Docker, AWS and CI/CD, mostly by breaking deploys and fixing them.",
+    body: "My own deployment platform, and how I'm learning Docker, AWS and CI/CD, mostly by breaking deploys and fixing them. Version 1 is done; version 2 is in progress.",
     tag: "Break",
   },
   {

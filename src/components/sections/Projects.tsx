@@ -282,7 +282,7 @@ export function Projects() {
           accent={[2]}
           aside={
             <p>
-              Every project here has its source code on GitHub. LaunchFlow is my final year project, and I&apos;m still working on it.
+              SecureCode Navigator is my final year project and is still in development, so its code is in a private team repository. The rest link to their source on GitHub.
             </p>
           }
         />
