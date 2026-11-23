@@ -61,7 +61,7 @@ export function Hero() {
             delay={0.15}
             stagger={0.08}
             accent={[6]}
-            className="text-[clamp(3rem,7.4vw,8.5rem)] font-semibold leading-[0.88] tracking-[-0.055em] text-balance"
+            className="text-[clamp(2.5rem,5vw,5.25rem)] font-semibold leading-[1.02] tracking-[-0.04em] text-balance"
           />
 
           <motion.p {...fadeUp(0.55)} className="mt-8 max-w-[34rem] text-[1.0625rem] leading-relaxed text-paper-dim md:text-lg">
