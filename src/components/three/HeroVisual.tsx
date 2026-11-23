@@ -11,7 +11,6 @@ const FIScene = dynamic(() => import("./FIScene"), { ssr: false });
 
 export function HeroVisual({ start }: { start: boolean }) {
   const wrap = useRef<HTMLDivElement>(null);
-  const coords = useRef<HTMLSpanElement>(null);
   const webgl = useWebGLSupport();
   const still = usePrefersReducedMotion();
   const lite = useMediaQuery("(max-width: 767px), (pointer: coarse)");
@@ -43,14 +42,7 @@ export function HeroVisual({ start }: { start: boolean }) {
   return (
     <div
       ref={wrap}
-      className="crop-marks relative aspect-square w-full select-none"
-      onPointerMove={(e) => {
-        if (!coords.current) return;
-        const r = e.currentTarget.getBoundingClientRect();
-        const x = ((e.clientX - r.left) / r.width) * 2 - 1;
-        const y = -(((e.clientY - r.top) / r.height) * 2 - 1);
-        coords.current.textContent = `X ${x >= 0 ? "+" : ""}${x.toFixed(2)}  Y ${y >= 0 ? "+" : ""}${y.toFixed(2)}`;
-      }}
+      className="relative aspect-square w-full select-none"
     >
       {/* blueprint frame */}
       <div className="pointer-events-none absolute inset-0 blueprint-grid-fine opacity-60 [mask-image:radial-gradient(circle_at_center,black_35%,transparent_72%)]" />
@@ -74,16 +66,6 @@ export function HeroVisual({ start }: { start: boolean }) {
           <FIScene lite={lite} still={still} paused={!visible} onReady={() => setReady(true)} />
         </motion.div>
       )}
-
-      {/* technical annotations */}
-      <div className="pointer-events-none absolute inset-0 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-mute">
-        <span className="absolute left-3 top-3">Fig. 01: FI monogram</span>
-        <span className="absolute right-3 top-3 hidden sm:block">Rev. 2026.11</span>
-        <span ref={coords} className="absolute bottom-3 left-3 tabular-nums">
-          X +0.00  Y +0.00
-        </span>
-        <span className="absolute bottom-3 right-3 text-acid">{webgl === false ? "Static render" : "Interactive"}</span>
-      </div>
     </div>
   );
 }
