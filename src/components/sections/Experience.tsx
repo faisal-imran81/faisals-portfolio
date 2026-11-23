@@ -9,11 +9,11 @@ export function Experience() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="experience" className="relative border-t hairline bg-ink-2/40 py-28 md:py-40" aria-labelledby="experience-title">
+    <section id="experience" className="relative border-t hairline bg-ink-2/40 py-20 md:py-28" aria-labelledby="experience-title">
       <div className="container-x">
         <SectionHeading id="experience-title" index="04" label="Experience" title="My internship at FlyRank." accent={[1]} />
 
-        <div className="mt-20 grid gap-12 md:mt-28 lg:grid-cols-12 lg:gap-8">
+        <div className="mt-14 grid gap-12 md:mt-20 lg:grid-cols-12 lg:gap-8">
           {/* Identity card */}
           <Reveal className="lg:col-span-5">
             <div className="crop-marks relative border hairline bg-ink p-6 md:p-10">

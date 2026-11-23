@@ -28,7 +28,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative overflow-hidden border-t hairline pt-28 md:pt-40" aria-labelledby="contact-title">
+    <section id="contact" className="relative overflow-hidden border-t hairline pt-20 md:pt-28" aria-labelledby="contact-title">
       <div className="pointer-events-none absolute inset-0 blueprint-grid [mask-image:radial-gradient(ellipse_at_bottom,black,transparent_70%)]" />
       <div className="container-x relative">
         <Reveal className="flex items-center gap-3 label-mono">

@@ -63,7 +63,7 @@ function FeaturedProject({ p, flip }: { p: Project; flip?: boolean }) {
   const panelId = useId();
 
   return (
-    <article id={`project-${p.id}`} className="relative scroll-mt-20 border-t hairline py-16 md:py-24" aria-labelledby={`${p.id}-title`}>
+    <article id={`project-${p.id}`} className="relative scroll-mt-20 border-t hairline py-12 md:py-20" aria-labelledby={`${p.id}-title`}>
       <Reveal className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-3 md:mb-12">
         <span className="label-mono" style={{ color: p.accent }}>{p.kicker}</span>
         <StatusPill status={p.status} />
@@ -266,7 +266,7 @@ export function Projects() {
   const rest = projects.filter((p) => !p.featured);
 
   return (
-    <section id="work" className="relative py-28 md:py-40" aria-labelledby="work-title">
+    <section id="work" className="relative py-20 md:py-28" aria-labelledby="work-title">
       <div className="container-x">
         <SectionHeading
           id="work-title"
@@ -281,7 +281,7 @@ export function Projects() {
           }
         />
 
-        <div className="mt-20 md:mt-28">
+        <div className="mt-14 md:mt-20">
           {featured.map((p, i) => (
             <FeaturedProject key={p.id} p={p} flip={i % 2 === 1} />
           ))}

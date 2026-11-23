@@ -11,7 +11,7 @@ export function Arsenal() {
   const rest = arsenal.slice(1);
 
   return (
-    <section id="arsenal" className="relative border-t hairline py-28 md:py-40" aria-labelledby="arsenal-title">
+    <section id="arsenal" className="relative border-t hairline py-20 md:py-28" aria-labelledby="arsenal-title">
       <div className="pointer-events-none absolute inset-0 blueprint-grid opacity-40 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       <div className="container-x relative">
         <SectionHeading
@@ -23,7 +23,7 @@ export function Arsenal() {
         />
 
         {/* Core — the three headline skills */}
-        <div className="mt-20 grid gap-px overflow-hidden border hairline bg-line md:mt-28 md:grid-cols-3">
+        <div className="mt-14 grid gap-px overflow-hidden border hairline bg-line md:mt-20 md:grid-cols-3">
           {core.items.slice(0, 3).map((s, i) => (
             <Reveal key={s.name} delay={i * 0.08} className="bg-ink">
               <div className="group relative flex h-full flex-col justify-between gap-16 p-6 transition-colors duration-500 hover:bg-ink-2 md:p-8">

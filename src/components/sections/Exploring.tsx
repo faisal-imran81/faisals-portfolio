@@ -6,12 +6,12 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Exploring() {
   return (
-    <section id="exploring" className="relative overflow-hidden border-t hairline py-28 md:py-40" aria-labelledby="exploring-title">
+    <section id="exploring" className="relative overflow-hidden border-t hairline py-20 md:py-28" aria-labelledby="exploring-title">
       <div className="pointer-events-none absolute -left-[20%] bottom-0 h-[50vmax] w-[50vmax] rounded-full bg-[radial-gradient(circle,rgb(200_241_53/0.05),transparent_60%)]" />
       <div className="container-x relative">
         <SectionHeading id="exploring-title" index="06" label="What I'm learning" title={exploring.headline} accent={[3]} />
 
-        <div className="mt-20 grid gap-12 md:mt-28 lg:grid-cols-12 lg:gap-8">
+        <div className="mt-14 grid gap-12 md:mt-20 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
             <Reveal>
               <p className="text-lg leading-relaxed text-paper-dim md:text-xl">{exploring.body}</p>

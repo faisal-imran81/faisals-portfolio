@@ -13,11 +13,11 @@ export function Journey() {
   const line = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
 
   return (
-    <section id="journey" className="relative border-t hairline py-28 md:py-40" aria-labelledby="journey-title">
+    <section id="journey" className="relative border-t hairline py-20 md:py-28" aria-labelledby="journey-title">
       <div className="container-x">
         <SectionHeading id="journey-title" index="05" label="Journey" title="How I got here." accent={[3]} />
 
-        <ol ref={ref} className="relative mt-20 md:mt-28">
+        <ol ref={ref} className="relative mt-14 md:mt-20">
           {/* spine */}
           <div className="absolute bottom-0 left-[7px] top-0 w-px bg-line md:left-1/2" aria-hidden />
           <motion.div

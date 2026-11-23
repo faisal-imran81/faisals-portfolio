@@ -20,11 +20,11 @@ export function About() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="about" className="relative py-28 md:py-40" aria-labelledby="about-title">
+    <section id="about" className="relative py-20 md:py-28" aria-labelledby="about-title">
       <div className="container-x">
         <SectionHeading id="about-title" index="01" label="About" title="I learn by building things." accent={[3]} />
 
-        <div className="mt-16 grid gap-14 md:mt-24 md:grid-cols-12 md:gap-6">
+        <div className="mt-12 grid gap-14 md:mt-16 md:grid-cols-12 md:gap-6">
           <div className="md:col-span-6 md:col-start-4">
             <Reveal>
               <p className="text-[1.375rem] leading-[1.45] tracking-[-0.015em] text-paper md:text-[1.625rem]">
@@ -61,7 +61,7 @@ export function About() {
         </div>
 
         {/* ── Engineering mindset: the loop ── */}
-        <div className="mt-28 md:mt-40">
+        <div className="mt-14 md:mt-20">
           <Reveal className="mb-10 flex items-end justify-between gap-6">
             <div>
               <p className="label-mono">How I work</p>
