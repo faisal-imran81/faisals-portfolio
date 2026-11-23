@@ -59,9 +59,7 @@ export function Experience() {
             <div className="grid gap-px border hairline bg-line sm:grid-cols-2">
               {internship.work.map((w, wi) => (
                 <Reveal key={w.area} delay={0.1 + wi * 0.1} className="bg-ink p-6 md:p-8">
-                  <p className="label-mono">
-                    <span className="text-acid">0{wi + 1}</span> {w.area}
-                  </p>
+                  <p className="label-mono text-acid">{w.area}</p>
                   <ul className="mt-8 space-y-5">
                     {w.items.map((it) => (
                       <li key={it} className="flex gap-3 text-[1.0625rem] leading-snug tracking-[-0.01em] text-paper">
