@@ -129,22 +129,22 @@ body::before {
 
 /* Display type scale — fluid, tight, editorial */
 @utility display-xl {
-  font-size: clamp(3rem, 9.5vw, 10rem);
+  font-size: clamp(2.5rem, 6vw, 6rem);
   line-height: 1;
-  letter-spacing: -0.055em;
-  font-weight: 600;
-}
-@utility display-lg {
-  font-size: clamp(2.5rem, 6.6vw, 6.5rem);
-  line-height: 1.05;
   letter-spacing: -0.045em;
   font-weight: 600;
 }
-@utility display-md {
+@utility display-lg {
   font-size: clamp(2rem, 4.2vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+}
+@utility display-md {
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
   line-height: 1.1;
-  letter-spacing: -0.04em;
-  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-weight: 500;
 }
 
 /* Animated dashed connectors used in technical diagrams */
