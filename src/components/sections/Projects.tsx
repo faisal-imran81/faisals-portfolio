@@ -45,11 +45,9 @@ function Stack({ items }: { items: string[] }) {
 function Highlights({ items, accent }: { items: string[]; accent: string }) {
   return (
     <ul className="space-y-3">
-      {items.map((h, i) => (
-        <li key={h} className="grid grid-cols-[2rem_1fr] gap-2 text-[0.9375rem] leading-relaxed text-paper-dim">
-          <span className="font-mono text-[0.6875rem] leading-[1.6rem]" style={{ color: accent }}>
-            {String(i + 1).padStart(2, "0")}
-          </span>
+      {items.map((h) => (
+        <li key={h} className="grid grid-cols-[1.25rem_1fr] gap-2 text-[0.9375rem] leading-relaxed text-paper-dim">
+          <span className="mt-[0.8em] h-px w-3" style={{ background: accent }} aria-hidden />
           <span>{h}</span>
         </li>
       ))}
@@ -67,10 +65,7 @@ function FeaturedProject({ p, flip }: { p: Project; flip?: boolean }) {
   return (
     <article id={`project-${p.id}`} className="relative scroll-mt-20 border-t hairline py-16 md:py-24" aria-labelledby={`${p.id}-title`}>
       <Reveal className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-3 md:mb-12">
-        <span className="font-mono text-[0.6875rem] tracking-[0.14em]" style={{ color: p.accent }}>
-          {p.index}
-        </span>
-        <span className="label-mono">{p.kicker}</span>
+        <span className="label-mono" style={{ color: p.accent }}>{p.kicker}</span>
         <StatusPill status={p.status} />
         <span className="ml-auto label-mono">{p.year}</span>
       </Reveal>
@@ -167,7 +162,7 @@ function ProjectIndex({ items }: { items: Project[] }) {
   const [openId, setOpenId] = useState<string | null>(null);
   const reduce = useReducedMotion();
 
-  // Open a row when something links to it (e.g. the capstone card in Experience).
+  // Open a row when something links to it by #project-id.
   useEffect(() => {
     const sync = () => {
       const id = window.location.hash.replace("#project-", "");
@@ -191,15 +186,14 @@ function ProjectIndex({ items }: { items: Project[] }) {
                   onClick={() => setOpenId(open ? null : p.id)}
                   aria-expanded={open}
                   aria-controls={`${p.id}-panel`}
-                  className="group relative grid w-full grid-cols-[2.5rem_1fr_auto] items-center gap-3 py-6 text-left md:grid-cols-12 md:gap-6 md:py-8"
+                  className="group relative grid w-full grid-cols-[1fr_auto] items-center gap-3 py-6 text-left md:grid-cols-12 md:gap-6 md:py-8"
                 >
                   <span
                     aria-hidden
                     className="absolute inset-y-0 -left-[var(--gutter)] w-[2px] origin-top scale-y-0 transition-transform duration-500 group-hover:scale-y-100"
                     style={{ background: p.accent }}
                   />
-                  <span className="font-mono text-[0.6875rem] tracking-[0.14em] text-mute md:col-span-1">{p.index}</span>
-                  <span className="md:col-span-5">
+                  <span className="md:col-span-6">
                     <span
                       className={`block text-[clamp(1.5rem,3vw,2.5rem)] font-semibold leading-[1.05] tracking-[-0.035em] transition-[color,transform] duration-500 group-hover:translate-x-2 ${open ? "" : "text-paper"}`}
                       style={open ? { color: p.accent } : undefined}
@@ -232,7 +226,7 @@ function ProjectIndex({ items }: { items: Project[] }) {
                     className="overflow-hidden"
                   >
                     <div className="grid gap-8 pb-10 md:grid-cols-12 md:gap-6">
-                      <div className="md:col-span-5 md:col-start-2">
+                      <div className="md:col-span-6">
                         <div className="mb-5 md:hidden">
                           <StatusPill status={p.status} />
                         </div>
