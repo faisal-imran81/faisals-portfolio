@@ -45,7 +45,7 @@ export function Hero() {
         {/* ── Copy ── */}
         <motion.div style={{ y: textY, opacity: fade }} className="relative z-10 order-2 lg:order-1 lg:col-span-6 xl:col-span-6">
           <motion.div {...fadeUp(0.05)} className="mb-6 flex items-center gap-3 label-mono">
-            <span className="size-1.5 rounded-full bg-acid animate-pulse-dot" aria-hidden />
+            <span className="size-1.5 rounded-full bg-acid" aria-hidden />
             <span>{site.location}</span>
           </motion.div>
 
@@ -91,19 +91,8 @@ export function Hero() {
 
       {/* ── Bottom rail ── */}
       <motion.div {...fadeUp(0.9)} className="container-x relative z-10 pb-6">
-        <div className="flex flex-col gap-4 border-t hairline pt-5 sm:flex-row sm:items-center sm:justify-between">
-          <ul className="flex flex-wrap gap-x-5 gap-y-1 label-mono">
-            <li>Software Engineer</li>
-            <li>CS Major at FAST</li>
-            <li className="text-paper-dim">DevOps Enthusiast</li>
-          </ul>
+        <div className="border-t hairline pt-5">
           <Motif />
-          <a href="#about" className="group hidden items-center gap-3 label-mono hover:text-paper md:flex" aria-label="Scroll to About">
-            Scroll
-            <span className="relative block h-8 w-px overflow-hidden bg-line-strong">
-              <span className="absolute inset-x-0 top-0 h-3 bg-acid motion-safe:animate-[scrollcue_1.8s_var(--ease-out-expo)_infinite]" />
-            </span>
-          </a>
         </div>
       </motion.div>
     </section>
