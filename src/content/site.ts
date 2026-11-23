@@ -233,7 +233,7 @@ export const projects: Project[] = [
     kicker: "Mental wellness app",
     summary:
       "A mental wellness app with an AI chat, a mood tracker and a journal. If someone types something that sounds like a crisis, it shows them helpline links straight away.",
-    status: "Live",
+    status: "Built",
     year: "2026",
     stack: ["Next.js 16", "React Three Fiber", "FastAPI", "Groq", "Prisma", "PostgreSQL", "Clerk", "Railway"],
     highlights: [
@@ -247,7 +247,6 @@ export const projects: Project[] = [
       { label: "Breathing exercise", value: "4-7-8" },
     ],
     source: "https://github.com/faisal-imran81/Solace",
-    live: "https://solace-web-fm4f-gamma.vercel.app",
     viz: "wellness",
     accent: "#9db7ff",
     featured: true,
@@ -414,7 +413,7 @@ export const journey: JourneyItem[] = [
   {
     date: "Jul 2026",
     title: "Shipped four projects in one month",
-    body: "Muslimeen, Elucid, Solace and the TA & Faculty platform. Three of them are live.",
+    body: "Muslimeen, Elucid, Solace and the TA & Faculty platform. Three of them were deployed.",
     tag: "Ship",
   },
   {
