@@ -4,6 +4,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
 import { useRef } from "react";
 import { site } from "@/content/site";
 import { useIntro } from "@/lib/intro";
+import { useMediaQuery } from "@/lib/hooks";
 import { HeroVisual } from "@/components/three/HeroVisual";
 import { SplitWords } from "@/components/ui/SplitWords";
 import { Button } from "@/components/ui/Button";
@@ -14,11 +15,14 @@ const ease = [0.16, 1, 0.3, 1] as const;
 export function Hero() {
   const { done } = useIntro();
   const reduce = useReducedMotion();
+  const wide = useMediaQuery("(min-width: 1024px)");
+  // Parallax only on wide screens: on stacked layouts it pushes the copy into the bottom rail.
+  const parallax = wide && !reduce;
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "18%"]);
-  const visualY = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "-8%"]);
-  const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", parallax ? "8%" : "0%"]);
+  const visualY = useTransform(scrollYProgress, [0, 1], ["0%", parallax ? "-5%" : "0%"]);
+  const fade = useTransform(scrollYProgress, [0, 0.8], [1, parallax ? 0 : 1]);
 
   const fadeUp = (delay: number) => ({
     initial: { opacity: 0, y: reduce ? 0 : 18 },
