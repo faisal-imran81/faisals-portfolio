@@ -31,7 +31,7 @@ export function Arsenal() {
                   <span>Top skill 0{i + 1}</span>
                   <span className="text-acid opacity-0 transition-opacity duration-500 group-hover:opacity-100">●</span>
                 </div>
-                <span className="text-[clamp(2.75rem,5vw,4.75rem)] font-semibold leading-none tracking-[-0.05em] transition-colors duration-500 group-hover:text-acid">
+                <span className="text-[clamp(2rem,3.4vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.04em] transition-colors duration-500 group-hover:text-acid">
                   {s.name}
                 </span>
               </div>
