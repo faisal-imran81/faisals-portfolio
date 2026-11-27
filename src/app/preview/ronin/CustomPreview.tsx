@@ -2,14 +2,11 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Lightformer } from "@react-three/drei";
-import dynamic from "next/dynamic";
 import { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { T } from "@/components/intro/timeline";
 import { RoninActor } from "@/components/intro/RoninActor";
 
-// the CURRENT intro samurai, unchanged, for side-by-side comparison
-const SamuraiScene = dynamic(() => import("@/components/intro/SamuraiScene"), { ssr: false });
 
 const LOOP = 3.8;
 
@@ -100,39 +97,20 @@ export function CustomPreview() {
   const [q] = useState(() => new URLSearchParams(window.location.search));
   const [freeze, setFreeze] = useState<number | null>(q.has("t") ? Number(q.get("t")) : null);
   const [overlay, setOverlay] = useState(q.get("overlay") !== "0");
-  const [compare, setCompare] = useState(q.get("compare") === "1");
-  const [loopKey, setLoopKey] = useState(0);
   const clockRef = useRef(freeze ?? 0);
   const cut = useRef<HTMLDivElement>(null);
   const info = useRef<HTMLParagraphElement>(null);
 
-  // remount the current intro scene each loop so both start together
-  useEffect(() => {
-    if (!compare || freeze !== null) return;
-    let last = 0;
-    const id = window.setInterval(() => {
-      if (clockRef.current < last) setLoopKey((k) => k + 1);
-      last = clockRef.current;
-    }, 50);
-    return () => window.clearInterval(id);
-  }, [compare, freeze]);
-
   return (
     <div className="fixed inset-0 flex flex-col bg-ink text-paper">
-      <div className={`grid flex-1 ${compare ? "grid-cols-2 gap-px bg-line" : "grid-cols-1"}`}>
+      <div className="grid flex-1 grid-cols-1">
         <div className="relative overflow-hidden bg-ink">
           <div ref={cut} className="absolute inset-0">
             <Stage clockRef={clockRef} freeze={freeze} onInfo={(s) => info.current && (info.current.textContent = s)} />
           </div>
           {overlay && <Overlay clockRef={clockRef} target={cut} />}
-          <p className="pointer-events-none absolute left-4 top-4 label-mono">A · RONIN-04 custom draw + kesa-giri (experiment)</p>
+          <p className="pointer-events-none absolute left-4 top-4 label-mono">RONIN-04 · intro choreography (loop)</p>
         </div>
-        {compare && (
-          <div className="relative overflow-hidden bg-ink">
-            <SamuraiScene key={loopKey} lite={false} portrait={false} freezeAt={freeze ?? undefined} onReady={() => {}} />
-            <p className="pointer-events-none absolute left-4 top-4 label-mono">B · current intro samurai (unchanged)</p>
-          </div>
-        )}
       </div>
       <div className="flex flex-wrap items-center gap-2 border-t hairline p-3 text-sm">
         <a href="/preview/ronin" className="rounded-full border border-line-strong px-3 py-1.5 text-paper-dim">← Clip viewer</a>
@@ -141,9 +119,6 @@ export function CustomPreview() {
         </button>
         <button onClick={() => setOverlay(!overlay)} className={`rounded-full border px-3 py-1.5 ${overlay ? "border-acid text-acid" : "border-line-strong text-paper-dim"}`}>
           Intro streak + split
-        </button>
-        <button onClick={() => setCompare(!compare)} className={`rounded-full border px-3 py-1.5 ${compare ? "border-acid text-acid" : "border-line-strong text-paper-dim"}`}>
-          Compare with current
         </button>
         {freeze !== null && (
           <input type="range" min={0} max={LOOP} step={0.01} value={freeze} onChange={(e) => setFreeze(Number(e.target.value))} className="w-64 accent-[#c8f135]" />
