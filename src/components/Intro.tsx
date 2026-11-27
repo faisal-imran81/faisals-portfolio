@@ -15,7 +15,7 @@ const ROLE = ["Software Engineer", "CS Major @ FAST", "DevOps Enthusiast"];
 const NAME = site.name.toUpperCase().split(" ");
 const ease = [0.16, 1, 0.3, 1] as const;
 /** If the 3D chunk hasn't drawn a frame by now, play the CSS-only cut instead of making people wait. */
-const SCENE_TIMEOUT = 2600;
+const SCENE_TIMEOUT = 4000;
 
 type Mode = "pending" | "cinema" | "fallback" | "reduced";
 
