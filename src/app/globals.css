@@ -190,3 +190,6 @@ body::before {
 .intro-failsafe {
   animation: intro-failsafe 0.4s ease 4s forwards;
 }
+.intro-seen .intro-overlay {
+  display: none;
+}
