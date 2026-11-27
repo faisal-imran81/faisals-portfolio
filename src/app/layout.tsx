@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import { site } from "@/content/site";
 import { getSiteUrl } from "@/lib/site-url";
@@ -94,10 +95,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <style
             dangerouslySetInnerHTML={{
               __html:
-                '[style*="opacity:0"],main g[opacity="0"]{opacity:1!important}[style*="translateY("],[style*="scale(0.96)"],main [style*="scaleX(0)"],main [style*="scaleY(0)"]{transform:none!important}',
+                '[style*="opacity:0"],main g[opacity="0"]{opacity:1!important}[style*="translateY("],[style*="scale(0.96)"],main [style*="scaleX(0)"],main [style*="scaleY(0)"]{transform:none!important}.intro-failsafe{display:none!important}',
             }}
           />
         </noscript>
+        {/* Returning in the same session: hide the intro overlay before hydration so there is no black flash. */}
+        <Script
+          id="intro-seen"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: "try{sessionStorage.getItem('fi-intro-seen')==='1'&&!/[?&]intro/.test(location.search)&&document.documentElement.classList.add('intro-seen')}catch(e){}",
+          }}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-acid focus:px-4 focus:py-2 focus:text-ink"
