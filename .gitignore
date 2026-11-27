@@ -32,3 +32,6 @@ next-env.d.ts
 *.pdf
 /private
 /reference
+
+# local-only comparison asset (7.6 MB source model)
+/public/preview/ronin-04-original.glb
