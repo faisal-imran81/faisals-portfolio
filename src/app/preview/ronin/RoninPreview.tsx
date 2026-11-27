@@ -7,7 +7,7 @@ import * as THREE from "three";
 import { SkeletonUtils } from "three-stdlib";
 import { T } from "@/components/intro/timeline";
 
-const SRC = { lime: "/preview/ronin-04-lime.glb", original: "/preview/ronin-04-original.glb" } as const;
+const SRC = { lime: "/models/ronin-04.glb", original: "/preview/ronin-04-original.glb" } as const;
 type Variant = keyof typeof SRC;
 const SCALE = 1 / 8; // the source is a 16 m mecha → ~2 scene units tall
 

@@ -1,8 +1,8 @@
 "use client";
-/* eslint-disable react-hooks/immutability -- imperative per-frame three.js mutation in an experiment */
+/* eslint-disable react-hooks/immutability -- imperative per-frame three.js mutation */
 
 /**
- * EXPERIMENT — custom iaijutsu choreography for RONIN-04 (preview only, not used by the real intro).
+ * Custom iaijutsu choreography for RONIN-04 (CC0, github.com/RamonLinares/atlas-09).
  * The katana bone is detached from the hand and mounted in a fitted scabbard on the left hip.
  * We author the SWORD's path (sheathed → drawn → hasso guard → kesa-giri) and derive the hands from it,
  * so the grip is always the model's own rest grip. Arms + legs use two-bone IK; feet stay planted.
@@ -14,9 +14,9 @@ import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { SkeletonUtils } from "three-stdlib";
 import { T } from "@/components/intro/timeline";
-import { analyzeSword, buildScabbard, quatFromPairs, setWorldQuat, solveTwoBone, worldPos, worldQuat } from "./rig";
+import { analyzeSword, buildScabbard, quatFromPairs, setWorldQuat, solveTwoBone, worldPos, worldQuat } from "./ronin-rig";
 
-const SRC = "/preview/ronin-04-lime.glb";
+const SRC = "/models/ronin-04.glb";
 const S = 1 / 8;
 const LIME = new THREE.Color("#c8f135");
 const PAPER = new THREE.Color("#efece4");
@@ -335,7 +335,7 @@ function blendMatrix(a: THREE.Matrix4, b: THREE.Matrix4, u: number, grip: THREE.
 
 /* ───────── component ───────── */
 
-export function CustomRonin({ clockRef, freeze, onInfo }: { clockRef: React.RefObject<number>; freeze: number | null; onInfo?: (s: string) => void }) {
+export function RoninActor({ clockRef, freeze, onInfo }: { clockRef: React.RefObject<number>; freeze: number | null; onInfo?: (s: string) => void }) {
   const gltf = useGLTF(SRC);
   const scene = useMemo(() => SkeletonUtils.clone(gltf.scene), [gltf.scene]);
   const rig = useMemo(() => buildRig(scene), [scene]);

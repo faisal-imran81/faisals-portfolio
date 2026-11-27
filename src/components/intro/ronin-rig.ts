@@ -1,5 +1,5 @@
 /**
- * EXPERIMENT — rig utilities for procedurally animating RONIN-04.
+ * Rig utilities for procedurally animating RONIN-04.
  * Measures the real katana from its skinned vertices, builds a scabbard that fits it,
  * and provides world-space IK helpers that write back into bone-local rotations.
  */

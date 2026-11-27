@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { T } from "@/components/intro/timeline";
-import { CustomRonin } from "./CustomRonin";
+import { RoninActor } from "@/components/intro/RoninActor";
 
 // the CURRENT intro samurai, unchanged, for side-by-side comparison
 const SamuraiScene = dynamic(() => import("@/components/intro/SamuraiScene"), { ssr: false });
@@ -90,7 +90,7 @@ function Stage({ clockRef, freeze, onInfo }: { clockRef: React.RefObject<number>
         <meshStandardMaterial color="#0b0b0a" roughness={0.85} metalness={0.2} envMapIntensity={0.15} />
       </mesh>
       <Suspense fallback={null}>
-        <CustomRonin clockRef={clockRef} freeze={freeze} onInfo={onInfo} />
+        <RoninActor clockRef={clockRef} freeze={freeze} onInfo={onInfo} />
       </Suspense>
     </Canvas>
   );
